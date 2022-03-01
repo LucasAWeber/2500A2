@@ -1,5 +1,6 @@
 #include "../include/weberLucasA2.h"
 
+// reads file based on passed in filename and saves its contents in dynamically allocated string
 char * readFile (char * filename)
 {
     FILE * fptr = fopen(filename, "r");
@@ -18,6 +19,7 @@ char * readFile (char * filename)
     return ptr;
 }
 
+// stretches given string by allowing the user to input how many of each letter there is (ie: "Hi" with the input 2 4 becomes HHiiii)
 char * stretchMe (char * aStringToStretch)
 {
     int stringLength = strlen(aStringToStretch);
@@ -52,6 +54,7 @@ char * stretchMe (char * aStringToStretch)
     return finalString;
 }
 
+// splits passed in string into a 2d array so each word is seperated and returns the number of words in the string
 int splitMe (char * aStringToSplit, char static2D [MAX_WORDS][MAX_LENGTH])
 {
     int words = 0;
@@ -80,6 +83,7 @@ int splitMe (char * aStringToSplit, char static2D [MAX_WORDS][MAX_LENGTH])
     return words;
 }
 
+// removes punctuation from passed in string returns the number of removed punctuation and updates string via pass by reference
 int shrinkMe (char * aStringToShrink)
 {
     int punctuation = 0;
@@ -102,6 +106,7 @@ int shrinkMe (char * aStringToShrink)
     return punctuation;
 }
 
+// returns true if every word in passed in string is a palindrome, otherwise returns false
 bool isItAPalindrome (char * aString)
 {
     char static2D [MAX_WORDS][MAX_LENGTH];
@@ -124,6 +129,7 @@ bool isItAPalindrome (char * aString)
     return true;
 }
 
+// prints n words, where n is the length of the kth word where k is whichWord each printed word starts with the letter from the kth word and ends with the string, desiredSuffix
 void printSuffixes (char * aString, int whichWord, char * desiredSuffix)
 {
     int words;
