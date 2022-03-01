@@ -128,6 +128,7 @@ void printSuffixes (char * aString, int whichWord, char * desiredSuffix)
 {
     int words;
     char static2D [MAX_WORDS][MAX_LENGTH];
+    shrinkMe(aString);
     words = splitMe(aString, static2D);
     for (int i = 0; i < strlen(static2D[whichWord-1]); i++)
     {
